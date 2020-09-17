@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoria</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="site-monitoria">
+        
+        <header>
+        
+            <div class="nav-bar-container">
+
+                <nav class="navbar">
+
+                    <a href="#" class="text-center logo">
+                        <img src="./assets/img/LOGO-monitoria.png" alt="Monitoria">
+                    </a>
+
+                    <a href="login.html" class="login bg-primary text-white">Fazer login</a>
+
+                </nav>
+
+            </div>
+            <hr>
+
+        </header>
+
+        <section class="posts">
+
+            <div class="container">
+
+                <div class="row post-item" v-for="post in posts">
+
+                    <div class="col-11">
+
+                        <img v-bind:src="post.img" v-bind:alt="post.imgTitle">
+                        <h2>{{ post.title }}</h2>
+                        <p>
+                            {{ post.post | truncate(200) }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p class="text-center">Site feito por <a href="https://github.com/Lucas-Povinske">Lucas Povinske</a></p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    
+    <script>
+
+        let app = new Vue({
+            el: '#site-monitoria',
+            data: {
+                isLogged: false,
+                username: 'Lucas',
+                posts: [{
+                    img: './assets/img/estruturas-de-dados.jpg',
+                    imgTitle: 'Post 1',
+                    title: 'Estruturas de Dados - O que é e quais suas vantagens',
+                    post: `
+                    Uma estrutura de dados (ED), em ciência da computação, é uma coleção tanto de valores (e seus relacionamentos) quanto de operações (sobre os valores e estruturas decorrentes). É uma implementação concreta de um tipo abstrato de dado (TAD) ou um tipo de dado (TD) básico ou primitivo. 
+                    Assim, o termo ED pode ser considerado sinônimo de TD, se considerado TAD um hipônimo de TD, isto é, se um TAD for um TD.
+                    Critérios para escolha e estudo de uma estrutura de dados incluem eficiência para buscas e padrões específicos de acesso, necessidades especiais para manejo de grandes volumes, ou a simplicidade de implementação e uso.
+                    `
+                }, {
+                    img: './assets/img/algortimos.png',
+                    imgTitle: 'Post 2',
+                    title: 'Como começar a programar algoritmos',
+                    post: `
+                    Algoritmo é simplesmente uma "receita" para executarmos uma tarefa ou resolver algum problema. 
+                    E como toda receita, um algoritmo também deve ser finito. Se seguirmos uma receita de bolo corretamente, conseguiremos fazer o bolo.
+                    `
+                }, {
+                    img: './assets/img/ia.jpg',
+                    imgTitle: 'Post 3',
+                    title: 'Inteligência Artificial e Você',
+                    post: `
+                    A Inteligência Artificial, que você vai ver por aí sendo citada apenas como IA (ou AI, de artificial intelligence) é um avanço tecnológico que permite que sistemas simulem uma inteligência similar à humana — indo além da programação de ordens específicas para tomar decisões de forma autônoma, baseadas em padrões de enormes bancos de dados.
+                    `
+                }]
+            },
+            methods: {
+                toggleLogin() {
+                    this.isLogged = !this.isLogged;
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

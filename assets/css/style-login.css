@@ -1,0 +1,73 @@
+a, a:hover {
+    text-decoration: none;
+    color: royalblue;
+}
+
+.links {
+    margin-top: 50px;
+}
+.link, .link:hover {
+    color: #f37520
+}
+
+.fade-login-enter, .fade-login-leave-to {
+  opacity: 0;
+}
+
+.fade-login-enter-active, .fade-login-leave-active {
+  transition: opacity ease-in-out .3s;
+}
+
+body{
+    background: #D0E4F5 url("http://fatecsjc-prd.azurewebsites.net/images/header-bg.jpg") repeat fixed 100% 50%;
+    margin: auto;
+}
+
+.nav-bar-container{
+    width: 100%;
+    border-bottom: 1px solid red;
+}
+
+.navbar {
+    background-color: #000;
+}
+
+.navbar .logo {
+    font-family: 'Open Sans Condensed';
+    font-size: 25px;
+    padding-left: 50px;
+    float: left;
+}
+
+.navbar img {
+    display: block;
+    width: 150px;
+}
+
+.navbar .login {
+    position: absolute;
+    right: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.navbar .logout {
+    padding: 5px;
+}
+
+.login-box{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    color:black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    width:50%;
+    height:auto;
+}
+
+footer {
+    color:white;
+    margin-top: 30px;
+    text-align: center;
+}
